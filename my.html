@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devendra Sakpal | Full Stack Developer</title>
+
+<meta name="description" content="Devendra Babu Sakpal is a Full Stack Developer and Final-year BSc Computer Science student skilled in Java, HTML, CSS, JavaScript and Firebase.">
+
+<meta name="keywords" content="Devendra Sakpal, Full Stack Developer, Java Developer, BSc Computer Science, Web Developer Portfolio">
+
+<meta name="author" content="Devendra Babu Sakpal">
+
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Devendra Babu Sakpal | Full Stack Developer">
+<meta property="og:description" content="Full Stack Developer skilled in Java, Web Development and Firebase.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="matamap.png">
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- FontAwesome (Stable CDN version) -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+
+/* ===== ROOT ===== */
+:root {
+  --bg: #0a0a14;
+  --text: #ffffff;
+  --card: rgba(255,255,255,0.06);
+  --accent1: #7f5af0;
+  --accent2: #00f5a0;
+}
+
+body.light {
+  --bg: #f4f4f4;
+  --text: #111;
+  --card: rgba(0,0,0,0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s ease;
+}
+
+/* ===== NAVBAR ===== */
+header {
+  position: sticky;
+  top: 0;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.3);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+  background: linear-gradient(45deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.toggle {
+  margin-left: 20px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, var(--accent1), var(--accent2));
+  color: white;
+}
+
+/* ===== SECTION ===== */
+section {
+  padding: 100px 10%;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* ===== HERO ===== */
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero h2 {
+  margin: 15px 0;
+  color: var(--accent2);
+  font-weight: 400;
+}
+
+.hero p {
+  max-width: 600px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, var(--accent1), var(--accent2));
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  margin-right: 15px;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent1);
+}
+
+/* ===== HERO LAYOUT ===== */
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.location {
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+}
+
+/* ===== MODERN HERO  STYLE ===== */
+
+.hero-image {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Big soft glow circle behind illustration */
+.circle-bg {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+
+  background: radial-gradient(circle at center,
+              rgba(127,90,240,0.35),
+              rgba(0,245,160,0.25),
+              transparent 70%);
+
+  filter: blur(15px);
+}
+
+/* Your image in front */
+.hero-photo {
+  width: 340px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 25px 40px rgba(0,0,0,0.6));
+  transition: 0.4s ease;
+
+  transform: translateY(-25px);
+}
+
+.hero-photo:hover {
+  transform: translateY(-30px);
+}
+
+.hero-illustration {
+  width: 400px;
+  position: relative;
+  z-index: 1;
+  transition: 0.4s ease;
+
+  transform: translateY(15px);
+  filter: brightness(1.15);
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle,
+              rgba(127,90,240,0.22),
+              rgba(0,245,160,0.18),
+              transparent 70%);
+  z-index: 0;
+  filter: blur(30px);
+}
+.hero-illustration:hover {
+  transform: translateY(5px);
+}
+
+/* ===== CARD ===== */
+.card {
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--card);
+}
+
+/* ===== SKILLS ===== */
+.skills-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.skill-category h3 {
+  margin-bottom: 20px;
+  color: var(--accent1);
+}
+
+.skill-items {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.skill-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card);
+  padding: 12px 25px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.skill-pill i {
+  color: var(--accent2);
+}
+
+.skill-pill:hover {
+  box-shadow: 0 0 12px var(--accent1);
+}
+
+/* ===== CONTACT ===== */
+.contact-icons {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.icon-card {
+  background: var(--card);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.3s;
+  width: 150px;
+}
+
+.icon-card i {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.icon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px var(--accent1);
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  background: var(--card);
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+
+/* ===== PREMIUM ANIMATED BACKGROUND ===== */
+body {
+  background-color: #0a0a14;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+body.light {
+  background-color: #f4f4f4;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(127,90,240,0.15), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.icon-card .fa-instagram {
+  background: linear-gradient(45deg, #feda75, #d62976, #962fbf);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ===== GRADIENT ICON STYLES ===== */
+
+.icon-card i {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* Email Gradient */
+.fa-envelope {
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* GitHub Gradient */
+.fa-github {
+  background: linear-gradient(45deg, #6e5494, #24292e);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* LinkedIn Gradient */
+.fa-linkedin {
+  background: linear-gradient(45deg, #0077b5, #00a0dc);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 768px) {
+
+  /* HERO STACK */
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-text {
+    order: 1;
+  }
+
+  .hero-image {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  /* IMPORTANT — Resize Illustration */
+  .hero-illustration {
+    width: 280px;
+    max-width: 90%;
+  }
+
+  /* HEADER FIX */
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 5%;
+  }
+
+  .logo {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+  }
+
+  nav a {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .toggle {
+    margin-left: 0;
+  }
+
+  
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Devendra Sakpal</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <button class="toggle" onclick="toggleTheme()">🌗</button>
+  </nav>
+</header>
+
+<section class="hero">
+
+  <div class="hero-container">
+
+    <!-- LEFT SIDE -->
+    <div class="hero-text">
+      <h1>Devendra Babu Sakpal</h1>
+      <h2>Full Stack Developer</h2>
+
+     <p class="location">
+      <i class="fa-solid fa-location-dot"></i> Bhiwandi, Maharashtra, India
+     </p>
+      <p>
+        Final-year BSc Computer Science student passionate about building
+        scalable web applications.
+      </p>
+
+      <a href="resume.pdf" download class="btn">
+        <i class="fa-solid fa-download"></i> Download Resume
+      </a>
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+   <div class="hero-image">
+  <div class="circle-bg"></div>
+  <img src="undraw_building-a-website_1wrp.svg" alt="Developer Illustration" class="hero-illustration">
+</div>
+
+  </div>
+
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    I specialize in building responsive web applications using Java, HTML, CSS, JavaScript and Firebase.
+    I enjoy creating real-world projects and continuously improving my backend and frontend skills.
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Technical Skills</h2>
+
+  <div class="skills-container">
+
+    <div class="skill-category">
+      <h3>Programming</h3>
+      <div class="skill-items">
+        <div class="skill-pill"><i class="fa-solid fa-code"></i> Core Java</div>
+        <div class="skill-pill"><i class="fa-solid fa-database"></i> SQL</div>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3>Frontend</h3>
+      <div class="skill-items">
+        <div class="skill-pill"><i class="fa-brands fa-html5"></i> HTML</div>
+        <div class="skill-pill"><i class="fa-brands fa-css3-alt"></i> CSS</div>
+        <div class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript</div>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3>Tools</h3>
+      <div class="skill-items">
+        <div class="skill-pill"><i class="fa-brands fa-github"></i> GitHub</div>
+        <div class="skill-pill"><i class="fa-solid fa-gears"></i> Maven</div>
+        <div class="skill-pill"><i class="fa-solid fa-laptop-code"></i> Eclipse</div>
+        <div class="skill-pill"><i class="fa-solid fa-code"></i> VS Code</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>E-MENU – Digital Restaurant System</h3>
+
+    <p>
+      A responsive web-based restaurant ordering system designed to modernize
+      traditional menu and billing processes.
+    </p>
+
+    <ul>
+      <li>Interactive food browsing interface</li>
+      <li>Cart & digital order summary generation</li>
+      <li>Secure Razorpay online payment integration</li>
+      <li>Firebase real-time database support</li>
+      <li>Admin dashboard for menu & order management</li>
+    </ul>
+
+    <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Firebase, Razorpay</p>
+
+    <a href="https://brlbrothers.github.io/Digital-Restaurant/" 
+       target="_blank" class="btn">
+       Live Project
+    </a>
+
+    <a href="https://github.com/BRLbrothers/Digital-Restaurant.git" 
+       target="_blank" class="btn">
+       GitHub Repository
+    </a>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact-icons">
+   <a href="https://mail.google.com/mail/?view=cm&to=devendrasakpal3@gmail.com"
+   target="_blank" class="icon-card">
+  <i class="fa-solid fa-envelope"></i>
+  <span>Email</span>
+</a>
+    <a href="https://github.com/Devendra-Sakpal" target="_blank" class="icon-card">
+      <i class="fa-brands fa-github"></i>
+      <span>GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/" target="_blank" class="icon-card">
+      <i class="fa-brands fa-linkedin"></i>
+      <span>LinkedIn</span>
+    </a>
+   <a href="https://www.instagram.com/sakpal7189?igsh=MWNtaWo1cjNqd25ocQ==" 
+   target="_blank" 
+   class="icon-card">
+    <i class="fa-brands fa-instagram"></i>
+    <span>Instagram</span>
+   </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Devendra Sakpal | Built US
+</footer>
+
+<script>
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
+
+</script>
+
+</body>
+</html>
